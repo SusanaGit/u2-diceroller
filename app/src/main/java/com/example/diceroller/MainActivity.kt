@@ -46,12 +46,21 @@ private fun DiceWithButtonAndImage(
 
     var result by remember { mutableStateOf(1) }
 
+    val imageResource = when (result) {
+        1 -> R.drawable.dice_1
+        2 -> R.drawable.dice_2
+        3 -> R.drawable.dice_3
+        4 -> R.drawable.dice_4
+        5 -> R.drawable.dice_5
+        else -> R.drawable.dice_6
+    }
+
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.dice_1),
+            painter = painterResource(imageResource),
             contentDescription = "1"
         )
 
@@ -62,10 +71,6 @@ private fun DiceWithButtonAndImage(
         Button(onClick = { result = (1..6).random()}) {
             Text(stringResource(R.string.roll))
         }
-
-        Text(
-            text = result.toString()
-        )
     }
 }
 
