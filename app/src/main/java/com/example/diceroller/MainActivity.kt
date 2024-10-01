@@ -62,8 +62,11 @@ private fun DiceWithButtonAndImage(
         Button(onClick = { result = (1..6).random()}) {
             Text(stringResource(R.string.roll))
         }
-    }
 
+        Text(
+            text = result.toString()
+        )
+    }
 }
 
 @Preview(showBackground = true)
