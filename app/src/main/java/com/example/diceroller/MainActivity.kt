@@ -43,6 +43,9 @@ private fun DiceWithButtonAndImage(
         .fillMaxSize()
         .wrapContentSize(Alignment.Center)
 ) {
+
+    var result = 1
+
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -56,7 +59,7 @@ private fun DiceWithButtonAndImage(
             modifier = Modifier.height(16.dp)
         )
 
-        Button(onClick = {}) {
+        Button(onClick = { result = (1..6).random()}) {
             Text(stringResource(R.string.roll))
         }
     }
