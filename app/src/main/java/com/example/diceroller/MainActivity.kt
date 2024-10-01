@@ -36,7 +36,8 @@ private fun DiceWithButtonAndImage(
         .wrapContentSize(Alignment.Center)
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
     }
